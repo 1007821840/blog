@@ -8,14 +8,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active" @click="homerou">
-            <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
+          <li class="nav-item active zz" @click="homerou">
+           <div>首页</div>
           </li>
-          <li class="nav-item" @click="love">
-            <a class="nav-link" href="#">喜欢</a>
+          <li class="nav-item zz" @click="love">
+          <div>喜欢</div>
           </li>
-          <li class="nav-item" @click="message">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" >留言版</a>
+          <li class="nav-item zz" @click="message">
+            <div>留言版</div>
           </li>
           <li class="nav-item dropdown">
             <div class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
@@ -28,10 +28,10 @@
           </li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item active zj">
             <div class="logins" @click="log">登录</div>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item active zj">
             <div class="register" @click="regis">注册</div>
           </li>
         </ul>
@@ -60,7 +60,6 @@
       },
       love(){
         this.$router.push({ path: '/love' });
-
       },
       homerou(){
         this.$router.push({ path: '/home' });
@@ -79,5 +78,18 @@
   }
 </script>
 <style scoped>
-
+  .zz div{
+    width: 60px;
+    height: 40px;
+    position: relative;
+    top: 8px;
+    font-size: 18px;
+    color: #ffffff;
+  }
+.zj div{
+  width: 50px;
+    
+  font-size: 18px;
+    color: #ffffff;
+}
 </style>

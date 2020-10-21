@@ -4,6 +4,7 @@ import router from './router'
 import store from './vuex'
 import axios from 'axios';
 import ElementUI from 'element-ui';
+import VueLazyLoad from 'vue-lazyload'
 import 'bootstrap'
 // import 'element-ui/lib/theme-chalk/index.css';
 import $ from 'jquery'
@@ -17,6 +18,7 @@ Vue.prototype.$reqs = axios;
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
+Vue.use(VueLazyLoad)
 
 new Vue({
   router,

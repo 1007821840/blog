@@ -77,16 +77,16 @@ export default {
   mounted () {},
   methods: {
     paths(){
-      this.$router.push({ path: 'wzrysd' });
+      this.$router.push({ path: 'wzry/wzrysd' });
     },
     paths1(){
-      this.$router.push({ path: 'mid' });
+      this.$router.push({ path: 'wzry/mid' });
     },
     paths2(){
-      this.$router.push({ path: 'jungle' });
+      this.$router.push({ path: 'wzry/jungle' });
     },
     paths3(){
-      this.$router.push({ path: 'wzryss' });
+      this.$router.push({ path: 'wzry/wzryss' });
     },
     contentScroll(position) {
         // console.log( this.currentIndex);

@@ -129,6 +129,19 @@ router.post('/AdminList', function(req, res, next) {
 	});
 });
 
+router.post('/love', function(req, res, next) {
+	req.route.path = "/page"; 
+	handler(req, res, "image", [] ,function(data,count){
+		var obj = {
+		  data:data,
+		  total:count,
+          success:"成功"
+        };
+        var str = JSON.stringify(obj);
+        res.end(str);
+	});
+});
+
 
 
 module.exports = router;

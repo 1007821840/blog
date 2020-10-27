@@ -6,6 +6,7 @@ const Login = () => import('../views/login/Login.vue')
 const Register = () => import('../views/login/Register.vue')
 const Message = () => import('../views/message/Message.vue')
 const Love = () => import('../views/love/Love.vue')
+const Blok = () => import('../views/blok/Blok.vue')
 const Suggest = () => import('../views/suggest/Suggest.vue')
 const Wzry = () => import('../views/wzry/Wzry.vue')
 const WzrySd = () => import('../views/wzry/childComps/WzrySd.vue')
@@ -18,6 +19,7 @@ Vue.use(Router)
 const routes = [
   {
     path: '/home',
+    name:'Home',
     component: Home
   },
   {
@@ -37,6 +39,10 @@ const routes = [
   {
     path: '/suggest',
     component: Suggest
+  },
+  {
+    path: '/blok',
+    component: Blok
   },
   {
     path: '/wzry',

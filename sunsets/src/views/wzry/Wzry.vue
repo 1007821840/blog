@@ -11,71 +11,74 @@
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-          <div class="col-lg-3 col-md-6" @click="paths">
+          <div class="col-lg-3 col-md-6" >
             <h2>上单</h2>
             <div class="her">
-              <img src="../../static/img/wzry/timg.jpg">
+              <img src="../../static/img/wzry/timg.jpg" @click="paths">
             </div>
           </div>
-          <div class="col-lg-3 col-md-6" @click="paths1">
+          <div class="col-lg-3 col-md-6">
             <h2>中单</h2>
             <div class="her">
-              <img src="../../static/img/wzry/huow.jpeg">
+              <img src="../../static/img/wzry/huow.jpeg"  @click="paths1">
             </div>
           </div>
-          <div class="col-lg-3 col-md-6" @click="paths2">
+          <div class="col-lg-3 col-md-6">
             <h2>打野</h2>
             <div class="her">
-              <img src="../../static/img/wzry/timg01.jpg">
+              <img src="../../static/img/wzry/timg01.jpg" @click="paths2">
             </div>
           </div>
-          <div class="col-lg-3 col-md-6" @click="paths3">
+          <div class="col-lg-3 col-md-6">
             <h2>射手</h2>
             <div class="her">
-              <img src="../../static/img/wzry/ssx.png">
+              <img src="../../static/img/wzry/ssx.png" @click="paths3">
             </div>
           </div>
         </div>
       </div> 
-      <!-- <div class="container cook">
-        <div class="row">
-          <div class="col-md-8">
-            <h2>内容</h2>
-            <div>content</div>
-          </div>
-          <div class="col-md-4">
-            <h2>这是我</h2>
-          </div>
-        </div>
-      </div>  -->
     </main>
-    <router-view/>
-    <!-- <footer class="container">
-      <p>&copy; Company 2017-2020</p>
-    </footer> -->
+    <wzry-tab/>
     </scroll>
+    <keep-alive>
+    <router-view/>
+    </keep-alive>
   </div>
 </template>
-
 <script>
    import Scroll from '@/components/common/scroll/Scroll'
    import header from '@/components/content/header.vue'
+   import WzryTab from './childComps/WzryTab.vue'
 export default {
-  name:"Home",
+  name:"Wzry",
   data () {
     return {
-      
+     
     };
   },
   components: {
     Scroll,
     'wbc-nav':header,
+    WzryTab
   },
+  
   updated() {
       this.loadMore()
     },
   mounted () {},
   methods: {
+    getAdminList() {
+        var _this = this;
+        this.$reqs.post('/users/wzry', {
+        }).then(function (result) {
+          //成功
+          _this.list = result.data.data;
+          console.log(_this.list);
+        }).catch(function (error) {
+          console.log('ddd');
+          //失败
+        });
+      },
     paths(){
       this.$router.push({ path: 'wzry/wzrysd' });
     },
@@ -107,6 +110,9 @@ export default {
     width: 100%;
     height: 100%;
   }
+  h2{
+    text-align: center;
+  }
 .wrapper {
     background-color: #F3F5F7;
     position: absolute;
@@ -117,25 +123,4 @@ export default {
     right: 0;
     overflow: hidden;
   }
-
-  
-body {
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	background-color: #403833;
-	font-size: 100%;
-	font-family: 'Open Sans';
-	font-weight: 100;
-	height:100%;
-}
-.row h2{
-  text-align: center;
-
-}
-
-.cook{
-  height: 1500px;
-  margin-top: 20px;
-}
-
-
 </style>

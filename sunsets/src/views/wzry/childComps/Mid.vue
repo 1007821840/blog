@@ -7,7 +7,7 @@
   
   <script>
   export default {
-    name:"WzrySd",
+    name:"Mid",
     data () {
       return {
         

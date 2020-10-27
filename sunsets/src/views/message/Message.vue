@@ -44,6 +44,11 @@
           </div>
           <div class="col-md-4">
             <h2>欢迎大家来到sun的blog!</h2>
+          
+              <qq-nav>
+                <img src="../../static/img/fd89dedd37de61ace12d360dd39e2a72.jpg">
+               </qq-nav>
+          
           </div>
         </div>
       </div>
@@ -51,10 +56,11 @@
   </div>
 </template>
 <script>
+    import qq from '@/components/content/qq.vue'
   import Scroll from '@/components/common/scroll/Scroll'
   import header from '@/components/content/header.vue'
   export default {
-    name: "",
+    name: "Message",
     data() {
       return {
         listData: [],
@@ -67,6 +73,7 @@
       }
     },
     components: {
+      'qq-nav':qq,
       'wbc-nav': header,
       Scroll
     },

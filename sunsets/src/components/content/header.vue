@@ -23,13 +23,17 @@
             <div class="dropdown-menu" aria-labelledby="dropdown01">
               <div class="dropdown-item"  @click="wzry">王者荣耀攻略(自创)</div>
               <div class="dropdown-item" @click='suggest'>写过的项目介绍</div>
+              <div class="dropdown-item" @click="pok">博客(摘要)</div>
               <div class="dropdown-item" >待定。。</div>
             </div>
           </li>
         </ul>
         <ul class="navbar-nav">
           <li class="nav-item active zj">
-            <div class="logins" @click="log">登录</div>
+            <div class="logins" @click="log">{{ssj}}</div>
+          </li>
+          <li class="nav-item active zj">
+            <div class="logins" @click="logout">退出</div>
           </li>
           <li class="nav-item active zj">
             <div class="register" @click="regis">注册</div>
@@ -43,20 +47,51 @@
 
 <script>
   export default {
-    name: "",
+    name: "Kep",
     data() {
       return {
+        ssj:'登录',
+        kong:''
 
       };
     },
+    updated(){
+	    	
+
+    },
+    created(){
+      
+     console.log(sessionStorage.getItem("username"));
+      this.ssj=sessionStorage.getItem("username");
+
+    },
     components: {},
-    mounted() { },
+    mounted() {},
     methods: {
+      logout(){ //退出系统
+        sessionStorage.setItem('username','');
+				var _this = this;
+				this.$reqs.post("/users/logout",{
+					
+				}).then(function(result){
+					//成功
+					// _this.$router.push({path:'/'});
+				}).catch(function (error) {
+					//失败
+			    console.log(error)
+        });
+        alert('请重新登录')
+         window.location.href="http://localhost:8080";
+        
+			},
       suggest(){
         this.$router.push({ path: '/suggest' });
       },
       wzry(){
         this.$router.push({ path: '/wzry' });
+      },
+     pok(){
+        this.$router.push({ path: '/blok' });
       },
       love(){
         this.$router.push({ path: '/love' });
@@ -88,7 +123,6 @@
   }
 .zj div{
   width: 50px;
-    
   font-size: 18px;
     color: #ffffff;
 }

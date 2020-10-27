@@ -2,8 +2,8 @@
   <div>
     <wbc-nav></wbc-nav>
     <scroll ref="scroll" @scroll="contentScroll" :probe-type="3" :pull-up-load="true" @pullingUp="loadMore">
-      <div class="jumbotron">
-      </div>
+     
+      <home-swipers/>
       <div class="container">
         <!-- Example row of columns -->
         <div class="row">
@@ -21,10 +21,11 @@
 </template>
 
 <script>
+    import HomeSwipers from '@/views/suggest/childComps/HomeSwipers.vue'
      import Scroll from '@/components/common/scroll/Scroll'
   import header from '@/components/content/header.vue'
 export default {
-  name:"",
+  name:"Love",
   data () {
     return {
       lists:[]
@@ -39,6 +40,7 @@ export default {
       this.loadMore()
     },
   components: {
+    HomeSwipers,
     'wbc-nav': header,
       Scroll
   },

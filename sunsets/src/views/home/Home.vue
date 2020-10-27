@@ -3,12 +3,14 @@
     <wbc-nav></wbc-nav>
     <scroll ref="scroll" @scroll="contentScroll" :probe-type="3" :pull-up-load="true" @pullingUp="loadMore">
     <main role="main" class="main">
+      <video-nav/>
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Hello, Sunset!</h1>
+          <audio-nav/>
          <loa-der/>
         </div>
       </div>
+    
       <main-one/>
       <main-two/>
     </main>
@@ -24,6 +26,8 @@
   import MainTwo from './childComps/MainTwo.vue'
    import Scroll from '@/components/common/scroll/Scroll'
    import header from '@/components/content/header.vue'
+   import video from '@/components/content/video.vue'
+   import audio from '@/components/content/audio.vue'
    import LoaDer from './childComps/LoaDer.vue'
 export default {
   name:"Home",
@@ -36,6 +40,8 @@ export default {
     Scroll,
     LoaDer,
     'wbc-nav':header,
+    'video-nav':video,
+    'audio-nav':audio,
     MainOne ,
     MainTwo 
   },
@@ -56,13 +62,15 @@ export default {
 </script>
 <style scoped>
   .jumbotron{
-    background-image: url(../../static/img/home1.jpg);
+    position: relative;
+    background-image: url(../../static/img/xm/home3\ \(1\).jpg);
     background-size:100% 100%;
-    height: 768px;
+    height: 600px;
+    border-radius: 0;
   }
   @media screen and (max-width: 768px) {
     .jumbotron{
-    height: 444px;
+    height: 375px;
   }
   
 }
@@ -76,6 +84,9 @@ export default {
     right: 0;
     overflow: hidden;
   }
-
+  .container{
+    width: 100%;
+    height: 100%;
+  }
   
 </style>

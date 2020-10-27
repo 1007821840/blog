@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name:"",
+  name:"LoaDer",
   data () {
     return {
       
@@ -24,9 +24,11 @@ export default {
 }
 </script>
 <style scoped>
-    /* .loader{
-    display: none;
-  } */
+   @media screen and (max-width: 768px) {
+   .loader{
+	   display: none;
+   }
+  }
   
 body {
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -57,15 +59,17 @@ body {
 
 
 .loader {
+	position: relative;
+	top: -35px;
   width:80%;
-  height:36px;
+  height:30px;
   overflow:visible;
 }
 
 .loader div {
   position:absolute;
-  width:30px;
-  height:36px;
+  width:25px;
+  height:30px;
   margin:10px 15px;
   opacity:0;
   animation:move 4s linear infinite;
@@ -77,9 +81,9 @@ body {
   -moz-transform:rotate(180deg);
   -webkit-transform:rotate(180deg);
   color:#fff;
-  font-size:3em;
+  font-size:2em;
 }
-.loader div:nth-child(8):before{
+/* .loader div:nth-child(8):before{
 	content:'';
 	position:absolute;
 	bottom:-15px;
@@ -114,7 +118,7 @@ body {
 	-webkit-border-radius: 100%;
 	-moz-border-radius: 100%;
 	border-radius: 100%;
-}
+} */
 .right{
   height: 300px;
   width: 100%;
@@ -129,11 +133,10 @@ body {
 .loader div:after{
 	content:'';
 	position:absolute;
-	bottom:-40px;
+	bottom:-20px;
 	left:0px;
-	width:30px;
+	width:24px;
 	height:5px;
-	background:#39312d;
 	-webkit-border-radius: 100%;
 	-moz-border-radius: 100%;
 	border-radius: 100%;
@@ -307,7 +310,7 @@ margin:10px;
 display:block;
 font-weight:100;
 cursor:pointer;
-font-size:1.5em;
+font-size:1em;
 float:left;
 text-decoration:none;
 font-size:18px;

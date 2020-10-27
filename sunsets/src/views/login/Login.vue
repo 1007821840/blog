@@ -39,7 +39,8 @@
                     password: this.password
                 }).then(function (result) {
                     //成功
-                    console.log(result)
+                    console.log(result.data)
+                    sessionStorage.setItem('username',result.data);
                     _this.disablebtn = false;
                     _this.loginText = "登录";
                     if (result.data.err) {

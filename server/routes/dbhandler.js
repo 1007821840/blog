@@ -116,10 +116,12 @@ var methodType = {
   add:add,
   update:updates,
   delete:deletes,
+  deletebloks:deletes,
   updatePwd:updates,
   //portal部分
   showCourse:find,
   register:add,
+  adds:add,
   page:page
 };
 //主逻辑    服务器  ， 请求    --》 

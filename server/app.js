@@ -35,9 +35,9 @@ app.use(function(req, res, next){
 	//后台请求
 	if(req.session.username){ //表示已经登录后台
 		next();
-	}else if( req.url.indexOf("login") >=0){
+	}else if( req.url.indexOf("login") >=0 || req.url.indexOf("logout") >= 0){
 		//登入，登出不需要登录
-    next();
+		next();
 	}else{
 		//next(); //TODO:这里是调试的时候打开的，以后需要删掉
 		res.end('{"redirect":"true"}');
@@ -45,7 +45,6 @@ app.use(function(req, res, next){
 	};
     
 });
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

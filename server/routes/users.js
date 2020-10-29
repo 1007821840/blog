@@ -117,7 +117,16 @@ router.post('/update', function(req, res, next) {
     	{"_id":ObjectId(req.body._id)},
     	{"$set":{
     			name:req.body.name, //用户名称
-				phone:req.body.phone //联系电话
+				phone:req.body.phone, //联系电话
+				sex:req.body.sex, //联系电话
+				idcd:req.body.idcd, //联系电话
+				love:req.body.love, //联系电话
+				class:req.body.class, //联系电话
+				now:req.body.now, //联系电话
+				address:req.body.address, //联系电话
+				yeas:req.body.yeas, //联系电话
+				work:req.body.work, //联系电话
+				imageUrl:req.body.imageUrl //联系电话
     		}
     	}
     ];
@@ -180,7 +189,19 @@ router.post('/love', function(req, res, next) {
 
 router.post('/wzry', function(req, res, next) {
 	req.route.path = "/page"; 
-	handler(req, res, "hero", [] ,function(data,count){
+	handler(req, res, "wzrypf", {},function(data,count){
+		var obj = {
+		  data:data,
+		  total:count,
+          success:"成功"
+        };
+        var str = JSON.stringify(obj);
+        res.end(str);
+	});
+});
+router.post('/wzryjn', function(req, res, next) {
+	req.route.path = "/page"; 
+	handler(req, res, "wzryjn", {},function(data,count){
 		var obj = {
 		  data:data,
 		  total:count,
@@ -207,6 +228,18 @@ router.post('/juzi', function(req, res, next) {
 router.post('/bloks', function(req, res, next) {
 	req.route.path = "/page"; 
 	handler(req, res, "bloks", [] ,function(data,count){
+		var obj = {
+		  data:data,
+		  total:count,
+          success:"成功"
+        };
+        var str = JSON.stringify(obj);
+        res.end(str);
+	});
+});
+router.post('/user', function(req, res, next) {
+	req.route.path = "/page"; 
+	handler(req, res, "user", [] ,function(data,count){
 		var obj = {
 		  data:data,
 		  total:count,

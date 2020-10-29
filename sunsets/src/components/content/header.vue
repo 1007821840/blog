@@ -38,6 +38,7 @@
           <li class="nav-item active zj">
             <div class="register" @click="regis">注册</div>
           </li>
+          
         </ul>
       </div>
     </nav>
@@ -100,7 +101,7 @@
         this.$router.push({ path: '/home' });
       },
       log() {
-        this.$router.push({ path: '/' });
+        this.$router.push({ path: '/wanji' });
       },
       regis() {
         this.$router.push({ path: '/register' });

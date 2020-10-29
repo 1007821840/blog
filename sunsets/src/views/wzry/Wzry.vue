@@ -40,7 +40,7 @@
     </main>
     <wzry-tab/>
     </scroll>
-    <keep-alive>
+    <keep-alive exclude="Details">
     <router-view/>
     </keep-alive>
   </div>

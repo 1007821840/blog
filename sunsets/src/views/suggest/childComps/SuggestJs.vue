@@ -3,10 +3,14 @@
         <div class="titles">星巴克</div>
         <div class="row">
             <div class="col-md-4 cols d-md-none">
+                <a href=" https://github.com/1007821840/xibc">
                 <img src="../../../static/img/xm/xbk1.jpg">
+                </a>
             </div>
             <div class="col-md-4 cols d-none d-md-block">
+                <a href=" https://github.com/1007821840/xibc">
                 <img src="../../../static/img/xm/xbk.png">
+            </a>
             </div>
             <div class="col-md-8 cols">
                 <div class="suggest0">
@@ -45,7 +49,9 @@
                 <a href="https://github.com/1007821840/work"><img src="../../../static/img/xm/elm1.jpg"></a>
             </div>
             <div class="col-md-4 cols d-none d-md-block">
+                <a href=" https://github.com/1007821840/work">
                 <img src="../../../static/img/xm/elm.png">
+                </a>
             </div>
             <div class="col-md-8 cols">
                 <div class="suggest0">
@@ -75,10 +81,14 @@
         <div class="titles">蘑菇街</div>
         <div class="row">
             <div class="col-md-4 cols d-md-none">
+                <a href=" https://github.com/1007821840/supermall1">
                 <img src="../../../static/img/xm/mgj1.jpg">
+                </a>
             </div>
             <div class="col-md-4 cols d-none d-md-block">
+                <a href=" https://github.com/1007821840/supermall1">
                 <img src="../../../static/img/xm/mgj.png">
+                </a>
             </div>
             <div class="col-md-8 cols">
                 <div class="suggest0">

@@ -7,6 +7,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
 	state: {
+		it:{},
 		loading: false,
 		UserList: [111,222,333], //用户列表
 		themeObj: 0,//主题
@@ -17,6 +18,10 @@ const store = new Vuex.Store({
 		
 	},
 	mutations: {
+		wzrypf(state,it){
+			state.it=it;
+			console.log(state.it);
+		},
     }
 	
 })

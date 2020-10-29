@@ -13,11 +13,11 @@
     </div>
     <div class="container">
       <div class="row">
-        <div v-for="it in list" class="list">
+        <div v-for="it in list" class="list" @click="wzry(it)">
           <div class="list-img">
             <img v-lazy="it.img[0]">
           </div>
-          <div class="list-text">{{it.name[0]}}</div>
+          <div class="list-text">{{it.name}}</div>
         </div>
       </div>
     </div>
@@ -40,6 +40,11 @@
       this.getAdminList()
     },
     methods: {
+      wzry(it){
+        console.log(it);
+        this.$store.commit('wzrypf',it)
+        this.$router.push({ path: 'wzry/details' });
+      },
       tab(i){
         console.log('1');
       },
@@ -49,6 +54,7 @@
         }).then(function (result) {
           //成功
           _this.list = result.data.data;
+          console.log(result);
         }).catch(function (error) {
           console.log('ddd');
           //失败

@@ -1,5 +1,8 @@
 <template>
     <div class="backlogin">
+        <div class="bao">
+        <video-nav/>
+        </div>
         <div class="login_box">
             <div class="title">嘿嘿嘿小宝贝还没登录呢</div>
             <div>
@@ -18,6 +21,7 @@
 </template>
 
 <script>
+      import video from '@/components/content/videos.vue'
     export default {
         name: 'backlogin',
         data() {
@@ -28,6 +32,9 @@
                 loginText: "登录"
             }
         },
+        components: {
+    'video-nav':video,
+  },
         methods: {
             login() {
                 var _this = this;
@@ -41,6 +48,7 @@
                     //成功
                     console.log(result.data)
                     sessionStorage.setItem('username',result.data);
+                   
                     _this.disablebtn = false;
                     _this.loginText = "登录";
                     if (result.data.err) {
@@ -79,6 +87,10 @@
     }
 
     .login_box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
         width: 320px;
         margin: 50px auto;
     }
@@ -121,7 +133,15 @@
     .login_other input {
         margin: 4px 5px 0 0;
     }
-
+.bao{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
     .login {
         box-sizing: border-box;
         border: none 0;

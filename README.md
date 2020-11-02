@@ -25,13 +25,20 @@ Vue + VueX + Vue-Router + Element-Ui + Axios + express + MongoDB + Flex + bootst
 登录 注册  
 音频 视频插件  
 留言版  
-发布博客 
-王者荣耀的人物资料打法   
-bootstrap布局
-个人信息模块  
+发布博客   
+王者荣耀的人物资料打法     
+bootstrap布局    
+个人信息模块    
 轮播图  
 滚动插件   
 session存储  
-# 5
+# 5项目难点  
+1，python爬取网站js动态数据多层嵌套  
+2，项目优化懒加载 节流防抖 Promise请求 better srcoll框架
+3, 数据库的增删改查  
+4，跨域  
+5，vuex同步响应  
+6，
+
 
 
